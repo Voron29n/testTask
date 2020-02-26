@@ -1,0 +1,17 @@
+.custom1 {
+    color : blue;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+}
+
+.wr {
+    /* width: 98% ; */
+    margin: 10px;
+}
+
+
+
