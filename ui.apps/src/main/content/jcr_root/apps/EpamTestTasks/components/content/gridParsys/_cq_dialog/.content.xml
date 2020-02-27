@@ -14,16 +14,16 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <row
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/form/numberfield"
-                            fieldLabel="Count of Row"
-                            name="./countRow"/>
                     <columns
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/form/numberfield"
                             fieldLabel="Count of columns"
                             name="./countColumns"/>
+                    <row
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                            fieldLabel="Count of Row"
+                            name="./countRow"/>
                 </items>
             </column>
         </items>

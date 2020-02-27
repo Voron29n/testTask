@@ -24,6 +24,7 @@ import java.util.UUID;
 
 import junitx.util.PrivateAccessor;
 
+import org.apache.jackrabbit.oak.commons.PathUtils;
 import org.apache.sling.settings.SlingSettingsService;
 import org.junit.Before;
 import org.junit.Test;
@@ -51,10 +52,12 @@ public class TestHelloWorldModel {
     
     @Test
     public void testGetMessage() throws Exception {
-        // some very basic junit tests
-//        String msg = hello.getMessage();
-//        assertNotNull(msg);
-//        assertTrue(msg.length() > 0);
+        String pagePath = "/content/EpamTestTasks/en/jcr:content/par/gridparsys/par_1/hello_world";
+        String pathToParNode = PathUtils.getAncestorPath(pagePath, 1);
+        if (PathUtils.getName(pathToParNode).contains("par")){
+            System.out.println(PathUtils.getName(pathToParNode));
+        }
+        System.out.println(pathToParNode);
     }
 
 }
