@@ -1,6 +1,6 @@
-var elements = document.querySelectorAll("[data-json]");
-
-setStyleByCountColumn(elements);
+//var elements = document.querySelectorAll("[data-json]");
+//
+//setStyleByCountColumn(elements);
 
 console.log("info");
 

@@ -15,18 +15,7 @@
  */
 package com.aem.epam.training.core.models;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import java.util.UUID;
-
-import junitx.util.PrivateAccessor;
-
 import org.apache.jackrabbit.oak.commons.PathUtils;
-import org.apache.sling.settings.SlingSettingsService;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -36,9 +25,9 @@ public class TestHelloWorldModel {
 
     //@Inject
     private HelloWorldModel hello;
-    
+
     private String slingId;
-    
+
 //    @Before
 //    public void setup() throws Exception {
 //        SlingSettingsService settings = mock(SlingSettingsService.class);
@@ -49,15 +38,34 @@ public class TestHelloWorldModel {
 //        PrivateAccessor.setField(hello, "settings", settings);
 //        hello.init();
 //    }
-    
+
     @Test
     public void testGetMessage() throws Exception {
         String pagePath = "/content/EpamTestTasks/en/jcr:content/par/gridparsys/par_1/hello_world";
         String pathToParNode = PathUtils.getAncestorPath(pagePath, 1);
-        if (PathUtils.getName(pathToParNode).contains("par")){
+        if (PathUtils.getName(pathToParNode).contains("par")) {
             System.out.println(PathUtils.getName(pathToParNode));
         }
         System.out.println(pathToParNode);
     }
 
+    @Test
+    public void testGridParNodeIterator() throws Exception {
+        String pagePath = "/content/EpamTestTasks/en/jcr:content/par/gridparsys/par_1/helloWorld";
+        String pathPar = pagePath.substring(pagePath.indexOf("par_"));
+        if (pagePath.contains("/")) {
+            pathPar = pathPar.substring(0, pathPar.indexOf("/"));
+        }
+
+        int counter = Integer.parseInt(pathPar.substring(pathPar.indexOf("_") + 1));
+
+
+        System.out.println(counter);
+
+//        String pathToParNode = PathUtils.getAncestorPath(pagePath, 1);
+//        if (PathUtils.getName(pathToParNode).contains("par")){
+//            System.out.println(PathUtils.getName(pathToParNode));
+//        }
+//        System.out.println(pathToParNode);
+    }
 }
